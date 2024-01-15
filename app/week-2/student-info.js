@@ -5,7 +5,7 @@ export function StudentInfo() {
       
         <div>
         <h1>Jin Francis Cabia</h1>
-        <Link href="https://github.com/jincabia/cprg306-assignments">Github repo</Link>
+        <Link className='text-sky-400 ' href="https://github.com/jincabia/cprg306-assignments">Github repo</Link>
         </div>
       
     );
