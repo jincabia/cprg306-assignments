@@ -4,15 +4,12 @@ export default function Page() {
     return (
       <main>
         <h1>CPRG306: Web Dev 2 - Assignments</h1>
-        
-          
-        <Link href="./week-2">Week 2 Page </Link>
-        <p></p>
-        <Link href="./week-3">Week 3 Page</Link>
-        
-        
-        
-        
+        <ul>
+
+          <li><Link href="./week-2">Week 2 Page </Link></li>
+          <li><Link href="./week-3">Week 3 Page</Link></li>
+
+        </ul>
       </main>
     );
   }
