@@ -1,27 +1,4 @@
-import React from 'react';
-
-const GroceryList = ({ data }) => {
-  return (
-    <div>
-      {Object.keys(data).map(category => (
-        <div key={category}>
-          <h2>{category}</h2>
-          <ul>
-            {data[category].map(item => (
-              <li key={item.id}>
-                <strong>{item.name}</strong> - Quantity: {item.quantity}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default function App() {
-  const groceryData = {
-    
+{
   "dairy": [
     {
       "id": "1h2GJKH12gkHG31h1H",
@@ -108,13 +85,4 @@ export default function App() {
       "category": "household"
     }
   ]
-
-  };
-
-  return (
-    <div>
-      <h1>Grocery List</h1>
-      <GroceryList data={groceryData} />
-    </div>
-  );
 }

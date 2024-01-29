@@ -3,19 +3,17 @@ import { useState } from 'react';
 
 
 
-
-export function NewItem() {
-
+export const NewItem = ({onAddItem}) => {
     const [name,setName] = useState("");
     const [quantity,setQuantity] = useState(1);
     const [category,setCategory] = useState("Produce");
 
     const handleSubmit = event => {
         event.preventDefault();
-        const item = {name,quantity,category};
-        console.log(item);
-        alert(`Added item: ${name}, quantity: ${quantity}, category: ${category}`);
-        //Added item: a, quantity: 1, category: produce
+        let id = (Math.random() + 1).toString(36).substring(7);
+        const item = {id,name,quantity,category};
+        console.log(item);       
+        onAddItem(item)
         setName("");
         setQuantity(1);
         setCategory("Produce");
@@ -23,18 +21,15 @@ export function NewItem() {
     };
     
     const changeName = event => {
-        console.log(event.target.value);
         setName(event.target.value);
     };
 
     const changeQuantity = event => {
-        console.log(event.target.value);
         
         setQuantity(event.target.value);
     };
 
     const changeCategory = event => {
-        console.log(event.target.value);
         setCategory(event.target.value);    
     };
 
@@ -42,7 +37,7 @@ export function NewItem() {
 
  
         return (
-            <div className='flex items-center justify-center'>
+            <div className='flex items-center justify-start'>
                 <div>
                     <form onSubmit={handleSubmit} className='bg-gray-700 m-4 p-4 grid grid-rows-2 grid-flow-row gap-4 rounded'>
                         <input
@@ -91,5 +86,4 @@ export function NewItem() {
                 </div>
             </div>
         );
-  }
-
+}
