@@ -5,16 +5,20 @@ import { Item } from "./item"
 
 
 
-
+//                        prop
 export function ItemList({items}) {
 
+
+  //state var
     const [sortBy,setSortBy] = useState("name");
 
     
 
+  //event handler
   const sortByName = () => {
     setSortBy("name")
   }
+  //event handler
 
   const sortByCategory = () => {
     setSortBy("category")
@@ -22,19 +26,23 @@ export function ItemList({items}) {
 
   
   
+  //event handler
 
  const printSorted = () =>
  {
-
   // const sliceItems = itemsData.slice();
+
+
+  //referencing the prop from above
   const itemsArray = [...items]
   
 
   
   
+
   if (sortBy =="name")
   {
-    
+    //sorts
     itemsArray.sort((a,b) => a.name.localeCompare(b.name));
   }
   else if (sortBy =="category") 
@@ -42,7 +50,7 @@ export function ItemList({items}) {
     itemsArray.sort((a,b) => a.category.localeCompare(b.category));
   }
 
-  
+  //mapping
   return [...itemsArray].map(item => <li key={item.id}><Item {...item}/></li>);
  }
  

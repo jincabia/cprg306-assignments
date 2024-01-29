@@ -2,24 +2,37 @@
 import { useState } from 'react';
 
 
-
+            //           prop 
 export const NewItem = ({onAddItem}) => {
+
+    //state variables for new items 
+    // names, quantity and category
     const [name,setName] = useState("");
     const [quantity,setQuantity] = useState(1);
     const [category,setCategory] = useState("Produce");
 
+    //event handler
     const handleSubmit = event => {
+
+        //preventing default
         event.preventDefault();
+
+
+        //creating a new random id and item from the event values
         let id = (Math.random() + 1).toString(36).substring(7);
         const item = {id,name,quantity,category};
-        console.log(item);       
+        console.log(item);  
+
+        //passing data
         onAddItem(item)
+
+        //reseting the data
         setName("");
         setQuantity(1);
         setCategory("Produce");
-        
     };
     
+    //event handlers for each value
     const changeName = event => {
         setName(event.target.value);
     };
@@ -33,9 +46,6 @@ export const NewItem = ({onAddItem}) => {
         setCategory(event.target.value);    
     };
 
-
-
- 
         return (
             <div className='flex items-center justify-start'>
                 <div>

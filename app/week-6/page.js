@@ -7,11 +7,14 @@ import { NewItem } from "./new-item";
 
 
 export default function Page (){
-    const [items,setItems] = useState(itemsData.slice());
-    console.log(items);
 
+    //state var
+    const [items,setItems] = useState(itemsData.slice());
+    // console.log(items);
+
+    //event handler
     const handleAddItems = (newItem) => {
-        console.log("Fuck")
+        //this is how editing an array is done, remaking the array and just adding it like this
         setItems((prevItems) => [...prevItems,newItem]);
     }
 
@@ -21,7 +24,6 @@ export default function Page (){
         <h1 className="text-4xl m-2 p-2"> Shopping List</h1>
         <NewItem onAddItem={handleAddItems}></NewItem>
         <ItemList items={items}/>
-        
         </div>
         
    
