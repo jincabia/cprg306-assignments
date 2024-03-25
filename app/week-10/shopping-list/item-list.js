@@ -6,7 +6,7 @@ import { Item } from "./item"
 
 
 //                        prop
-export function ItemList({items, onClickItem}) {
+export default function ItemList({items, onClickItem}) {
 
 
   //state var

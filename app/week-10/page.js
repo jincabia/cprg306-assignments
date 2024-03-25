@@ -34,7 +34,7 @@ export default function Page() {
                         You are signed in as <strong>{user.email}</strong>
                     </p>
                     <p>
-                    <strong><Link href="./week-8/shopping-list">Shopping List</Link></strong>
+                    <strong><Link href="./week-10/shopping-list">Shopping List</Link></strong>
 
                     </p>
                     <button onClick={handleSignOut}>Sign out</button>

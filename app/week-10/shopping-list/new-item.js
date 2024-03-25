@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 
             //           prop 
-export const NewItem = ({onAddItem}) => {
+export default function NewItem ({onAddItem}) {
 
     //state variables for new items 
     // names, quantity and category
